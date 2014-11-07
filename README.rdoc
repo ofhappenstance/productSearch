@@ -1,0 +1,1 @@
+Sample follow along with RailsCast for Ransack 
