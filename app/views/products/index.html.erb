@@ -1,11 +1,17 @@
 <h1>Products</h1>
-<!-- make form send POST request as in accordance to what was stated in routes file -->
+
 <%= search_form_for @search, url: search_products_path, method: :post  do |f| %>
   <%= f.condition_fields do |c| %>
-  <!-- f object in partial is equal to c in this search field -->
      <%= render "condition_fields", f: c %>
   <% end %>
   <p><%= link_to_add_fields "Add Conditions", f, :condition %>
+    <!-- generate select for sorting by field -->
+  <div class="field">
+    Sort:
+    <%= f.sort_fields do |s| %>
+      <%= s.sort_select %>
+    <% end %>
+  </div>
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
 
