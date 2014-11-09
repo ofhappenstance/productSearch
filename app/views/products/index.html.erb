@@ -6,7 +6,8 @@
   <div class="field">
     <!-- loop through each of the condition’s attribute_fields and display an attribute_select for each one.  -->
     <%= c.attribute_fields do |a| %>
-      <%= a.attribute_select %>
+    <!-- add search by category functionality on top of products categories -->
+      <%= a.attribute_select associations: [:category] %>
     <% end %>
     <%= c.predicate_select %>
     <%= c.value_fields do |v| %>
