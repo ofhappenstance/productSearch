@@ -1,19 +1,9 @@
 <h1>Products</h1>
 
 <%= search_form_for @search do |f| %>
-<!-- call a condition_fields method on the form builder and this passes another form builder in for each of the search conditions -->
   <%= f.condition_fields do |c| %>
-  <div class="field">
-    <!-- loop through each of the condition’s attribute_fields and display an attribute_select for each one.  -->
-    <%= c.attribute_fields do |a| %>
-    <!-- add search by category functionality on top of products categories -->
-      <%= a.attribute_select associations: [:category] %>
-    <% end %>
-    <%= c.predicate_select %>
-    <%= c.value_fields do |v| %>
-      <%= v.text_field :value %>
-    <% end %>
-    </div>
+  <!-- f object in partial is equal to c in this search field -->
+     <%= render "condition_fields", f: c %>
   <% end %>
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
