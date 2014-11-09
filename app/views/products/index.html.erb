@@ -5,6 +5,7 @@
   <!-- f object in partial is equal to c in this search field -->
      <%= render "condition_fields", f: c %>
   <% end %>
+  <p><%= link_to_add_fields "Add Conditions", f, :condition %>
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
 
