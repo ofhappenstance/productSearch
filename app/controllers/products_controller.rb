@@ -6,5 +6,6 @@ class ProductsController < ApplicationController
     # get found item by calling result on search object
     #f passed (distinct: true), result will generate a SELECT DISTINCT to avoid returning duplicate rows
     @products = @search.result
+    @search.build_condition
   end
 end

@@ -1,19 +1,19 @@
 <h1>Products</h1>
 
-# search_form_for replaces form_for
 <%= search_form_for @search do |f| %>
+<!-- call a condition_fields method on the form builder and this passes another form builder in for each of the search conditions -->
+  <%= f.condition_fields do |c| %>
   <div class="field">
-    <!-- https://github.com/activerecord-hackery/ransack/wiki/Basic-Searching for more search predicates like _cont -->
-    <%= f.label :name_cont, "Name contains" %>
-    <%= f.text_field :name_cont %>
-  </div>
-  <!-- add filters by price -->
-  <div class="field">
-    <%= f.label :price_gteq, "Price between" %>
-    <%= f.text_field :price_gteq %>
-    <%= f.label :price_lteq, "and" %>
-    <%= f.text_field :price_lteq %>    
-  </div>
+    <!-- loop through each of the condition’s attribute_fields and display an attribute_select for each one.  -->
+    <%= c.attribute_fields do |a| %>
+      <%= a.attribute_select %>
+    <% end %>
+    <%= c.predicate_select %>
+    <%= c.value_fields do |v| %>
+      <%= v.text_field :value %>
+    <% end %>
+    </div>
+  <% end %>
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
 
