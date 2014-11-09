@@ -1,6 +1,6 @@
 <h1>Products</h1>
-
-<%= search_form_for @search do |f| %>
+<!-- make form send POST request as in accordance to what was stated in routes file -->
+<%= search_form_for @search, url: search_products_path, method: :post  do |f| %>
   <%= f.condition_fields do |c| %>
   <!-- f object in partial is equal to c in this search field -->
      <%= render "condition_fields", f: c %>
