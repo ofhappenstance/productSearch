@@ -1,3 +1,4 @@
+Product.delete_all
 electronics = Category.create!(name: "Electronics")
 toys = Category.create!(name: "Toys & Games")
 clothes = Category.create!(name: "Clothes")
@@ -31,3 +32,5 @@ Product.create!(name: "Unicorn Action Figure", price: 8.75, released_on: rand(1.
 Product.create!(name: "Rack", price: 32.49, released_on: rand(1..90).days.ago, category_id: furniture.id)
 Product.create!(name: "Model Train Rails", price: 45.00, released_on: rand(1..90).days.ago, category_id: toys.id)
 Product.create!(name: "CanCan Music Record", price: 2.99, released_on: rand(1..90).days.ago, category_id: electronics.id)
+Product.create!(name: "Hello Kitty", price: 5.99, released_on: rand(1..90).days.ago, category_id: toys.id)
+
