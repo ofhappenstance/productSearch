@@ -80,4 +80,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  ENV["DATABASE_URL"] = "postgres://vfnrjrdnkeraso:E6jPA-D-5-KrEdreEZdw1027Ik@ec2-54-204-39-187.compute-1.amazonaws.com:5432/da217smrg7v27i"
+
 end
